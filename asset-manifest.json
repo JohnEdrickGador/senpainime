@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/senpainime/static/css/main.c9dd4796.css",
+    "main.js": "/senpainime/static/js/main.61e699ef.js",
+    "static/media/left-arrow.svg": "/senpainime/static/media/left-arrow.da21225bcf530088451874c9e21c215a.svg",
+    "static/media/right-arrow.svg": "/senpainime/static/media/right-arrow.d19ce8f87764b5901ed2ca6f0ff22d03.svg",
+    "index.html": "/senpainime/index.html",
+    "main.c9dd4796.css.map": "/senpainime/static/css/main.c9dd4796.css.map",
+    "main.61e699ef.js.map": "/senpainime/static/js/main.61e699ef.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9dd4796.css",
+    "static/js/main.61e699ef.js"
+  ]
+}
