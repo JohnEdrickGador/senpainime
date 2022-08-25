@@ -1,0 +1,152 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes expand {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+.slider-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid wheat; */
+}
+
+.imageSlider {
+    /* border: 1px solid red; */
+    border-radius:20px;
+    box-shadow: 3px 5px 5px 3px rgba(10, 6, 6, 0.363);
+    width:60%;
+    height: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: 0.5s ease-in-out expand;
+}
+
+.slide {
+    position: absolute;
+    height: 500px;
+    opacity: 0;
+    transition: opacity ease-in-out 0.4s;
+    display: flex;
+    justify-content: center;
+}
+
+.slide-anim {
+    opacity: 1;
+    animation: 0.7s ease-in-out fadeIn;
+}
+
+.imageSlider .slide {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+}
+
+.imageSlider .slide .slide-poster {
+    width: 100%;
+    filter: brightness(25%);
+}
+
+
+.imageSlider .slide .slide-info {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+
+.slide-info {
+    height: 100%;
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    /* border: 1px solid white; */
+    font-size: 0;
+}
+
+.slide-title {
+    font-family: var(--headerFont);
+    font-size: 48px;
+    color: white;
+    margin-bottom: 0;
+    padding-left: 1rem;
+}
+
+.slide-synopsis {
+    font-family: var(--regularFont);
+    font-size: 0.8rem;
+    text-align: justify;
+    width: 90%;
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.slide-other-infos {
+    font-family: var(--regularFont);
+    font-size: 0.8rem;
+    padding-left: 1rem;
+}
+
+.slide-genres {
+    display: flex;
+    padding-left: 1rem;
+    font-family: var(--regularFont);
+    font-size: 0.8rem;
+    flex-direction: row;
+}
+
+.slider-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255,255,255, 0.2);
+    border: 1px solid rgba(34, 34, 34, 0.287);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.2s all ease-in-out
+}
+
+.slider-btn:hover {
+    background: rgba(255,255,255, 0.6);
+}
+
+.slider-btn img {
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
+  }
+
+.prev {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-60%);
+  }
+
+.next {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-60%);
+  }
