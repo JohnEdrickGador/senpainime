@@ -4,7 +4,7 @@
     --navbar:#121010;
     --bodyBg: #221F1F;
     --darkRed: #B81D24;
-    --lighRed: #E50914;
+    --lightRed: #E50914;
     --headerFont: 'Bebas Neue', cursive;
     --regularFont: 'Poppins', sans-serif;
     --headerSize: 30px;
@@ -117,7 +117,7 @@ body {
 }
 
 .website-name > a:hover {
-    color: var(--lighRed)
+    color: var(--lightRed)
 }
 
 @media (max-width: 800px) {
