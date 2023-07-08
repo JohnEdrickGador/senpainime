@@ -10,11 +10,14 @@ function Search() {
   const sleep = ms => new Promise(
     resolve => setTimeout(resolve, ms)
   );
+
   //search Anime
   const searchAnime = async () => {
-    const temp = await fetch(`https://api.jikan.moe/v4/anime?letter=${params.queryString}&&limit=10&&type=TV,movie`)
+    console.log(params.queryString);
+    const temp = await fetch(`https://api.jikan.moe/v4/anime?q=${params.queryString}&&limit=10&&type=TV&&sfw=true`)
 
-    .then(res => res.json(),1000)
+    .then(res => res.json())
+    console.log(temp.data);
     setSearchResults(temp.data);
   }
 
@@ -28,7 +31,7 @@ function Search() {
         <Navbar />
         <div className='results-container'>
             <p>{`Results for "${params.queryString}"`}</p>
-            {searchResults.length > 0 ? <CardsContainer searchResults={searchResults} /> : <h2>{`No results found for "${params.queryString}"`}</h2>}
+            {searchResults != undefined ? <CardsContainer searchResults={searchResults} /> : <h2>{`No results found for "${params.queryString}"`}</h2>}
         </div>
     </div>
     )
