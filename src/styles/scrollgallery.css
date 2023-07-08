@@ -10,28 +10,32 @@
 
 .scroll-gallery::-webkit-scrollbar {
     width: 0;
+    background-color: rgb(107, 177, 107);
 }
 
-.character-card {
+.character-card{
     margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     color: white;
-    width: 225px;
-    height: auto;
+    height: 400px;
+    width: 300px;
     text-align: center;
     font-family: var(--regularFont);
     background-color: rgba(0,0,0,0.2);
     border-radius: 20px;
+    border: 1px solid white;
     animation: 0.7s ease-in-out fadeIn;
     transition: 0.2s all ease-in-out;
 }
 
+.cover-photo {
+    width: 100%;
+    height: 70%;
+}
+
 .character-card img {
-    object-fit: cover;
+    object-fit:contain;
     display: block;
+    max-height: 100%;
     /* border: 1px solid green; */
     border-radius: 20px 20px 0px 0px;
 }
@@ -39,3 +43,4 @@
 .character-card:hover {
     transform: scale(1.05);
 }
+

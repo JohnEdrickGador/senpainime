@@ -5,10 +5,6 @@ function ScrollGallery({animeId}) {
   const [characters,setCharacters] = useState([]);
   const [doneFetching, setDoneFetching] = useState(false)
 
-  const sleep = ms => new Promise(
-    resolve => setTimeout(resolve, ms)
-  );
-
   const getCharacters = async () => {
     const temp = await fetch(`https://api.jikan.moe/v4/anime/${animeId}/characters`)
 
@@ -20,9 +16,6 @@ function ScrollGallery({animeId}) {
   useEffect(() => {
     getCharacters();
   },[])
-
-
-  sleep(3000)
 
   if (doneFetching === true) {
     return (

@@ -23,7 +23,7 @@ function AnimeProfile() {
   const getAnime = async () => {
     const temp = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/full`)
 
-    .then(res => res.json(),1000);
+    .then(res => res.json());
     setAnime(temp.data)
   }
 
@@ -51,8 +51,11 @@ function AnimeProfile() {
           </div>
         </div>
       </div>
-      <p className='title'>Characters:</p>
-      <ScrollGallery animeId={params.animeId}/>
+      <div className='characters-scroll'>
+        <p className='title'>Characters:</p>
+        <ScrollGallery animeId={params.animeId}/>
+      </div>
+
     </div>
   )
 }
