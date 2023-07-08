@@ -7,16 +7,9 @@ import CardsContainer from '../components/CardsContainer';
 function Home() {
   const [topAnime, setTopAnime] = useState([]);
   const [mostPopular, setMostPopular] = useState([]);
-  //API Call for top 10 anime
-  const getTopTen = async () => {
-    const temp = await fetch(`https://api.jikan.moe/v4/top/anime?limit=10&&type=tv&&filter=favorite`)
-
-    .then(res => res.json())
-    setTopAnime(temp.data);
-  }
 
   const getPopular = async () => {
-    const temp2 = await fetch(`https://api.jikan.moe/v4/top/anime?limit=30&&type=movie&&filter=bypopularity`)
+    const temp2 = await fetch(`https://api.jikan.moe/v4/top/anime?limit=10&&type=movie&&filter=bypopularity`)
 
     .then(res => res.json());
     setMostPopular(temp2.data)
@@ -24,25 +17,16 @@ function Home() {
 
   //add empty array so that the function will only be called once
   useEffect(() => {
-    getTopTen();
-    var delay = 2000;
-    setTimeout(() => {
-      getPopular();
-    },delay)
-    
+    getPopular();
   },[])
   
   
   return (
     <div>
         <Navbar/>
-        <div className='slider-container'>
-          <ImageSlider topAnime = {topAnime}/>
-        </div>
         <div className='recommendations'>
-          <p>Most popular</p>
+          <p>Top 10 Most Popular</p>
           <CardsContainer searchResults={mostPopular} />
-
         </div>
     </div>
   )
